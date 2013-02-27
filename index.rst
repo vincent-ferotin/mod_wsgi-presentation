@@ -10,11 +10,34 @@ There are several ways to serve a `Python` web application:
 *   a dedicated `WSGI` server (`gunicorn`_, `waitress`_, `meinheld`_, etc.)
 *   a full web server (`Apache`, `nginx`, etc.)
 
+
 .. _wsgiref.simple_server:
         http://docs.python.org/2/library/wsgiref.html#module-wsgiref.simple_server
 .. _gunicorn: http://gunicorn.org/
 .. _waitress: http://docs.pylonsproject.org/projects/waitress/
 .. _meinheld: http://meinheld.org/
+
+
+Serving a `WSGI` app.
+---------------------
+
+Given a `WSGI`_ application, it is possible to serve it in multiple ways:
+
+*   *development* and tests:
+    a standalone `WSGI` server should suffice (e.g. `gunicorn`_, `waitress`_)
+
+    .. code-block:: sh
+
+        $ cd /var/www/philologic/caesar
+        $ gunicorn dispatcher:philo_dispatcher
+
+*   *production*: choose your stack, e.g.
+
+    *   nginx + (gunicorn | uwsgi)
+    *   [nginx +] apache + mod_wsgi
+
+
+.. _WSGI: http://www.wsgi.org/
 
 
 `Apache httpd` and `Python`
@@ -28,6 +51,7 @@ on a `Apache` web server:
 *   `mod_wsgi`_
 *   `uwsgi`_
 *   others?
+
 
 .. _mod_python: http://www.modpython.org/
 .. _mod_wsgi: http://code.google.com/p/modwsgi/
