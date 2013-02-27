@@ -199,8 +199,8 @@ Complete example
     WSGIScriptAlias /myapp /path/to/my/app/application.wsgi
 
 
-RTFM
-----
+RTFantasticMaintainer's
+-----------------------
 
 *   `configuration guidelines
     <http://code.google.com/p/modwsgi/wiki/ConfigurationGuidelines>`_
