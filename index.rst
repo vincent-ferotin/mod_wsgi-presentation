@@ -16,8 +16,8 @@ Preliminaries
         and a monolithic `mod_wsgi` configuration for prod. that "works for me"!
 
 
-Serve a `Python` web app.
--------------------------
+Serving a `Python` web app.
+---------------------------
 
 There are several ways to serve a `Python` web application:
 
