@@ -100,3 +100,27 @@ Configuration (1)
 
 .. _WSGIScriptAlias:
         http://code.google.com/p/modwsgi/wiki/ConfigurationDirectives#WSGIScriptAlias
+
+
+Configuration (2)
+-----------------
+
+*   `WSGIDaemonProcess`_, to run app. in its own processes:
+
+    .. code-block:: apache
+
+        WSGIDaemonProcess mydomain-tld-myapp processes=2 threads=5 (...)
+
+    .. note:: recommended by G.D. instead of default `embedded` mode
+
+    Some of other options:
+
+    *   ``processes`` & ``threads``:
+
+        .. code-block:: apache
+
+            WSGIDaemonProcess (...) processes=2 threads=5 (...)
+
+
+.. _WSGIDaemonProcess:
+    http://code.google.com/p/modwsgi/wiki/ConfigurationDirectives#WSGIDaemonProcess
