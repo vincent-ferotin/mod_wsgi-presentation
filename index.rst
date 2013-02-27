@@ -1,6 +1,14 @@
 A (very) short intro. to `mod_wsgi`
 ===================================
 
+Outline
+-------
+
+1.  a bit of context on serving `Python` web applications
+2.  some `mod_wsgi` configuration options
+
+
+
 Serve a `Python` web app.
 -------------------------
 
