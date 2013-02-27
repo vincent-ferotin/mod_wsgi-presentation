@@ -176,3 +176,25 @@ Configuration (5)
                 (...)
             </Directory>
 
+
+Complete example
+----------------
+
+.. code-block:: apache
+
+    WSGIDaemonProcess mydomain-tld-myapp \
+        processes=2 threads=5 \
+        python-path=/usr/lib/python2.7,(...) \
+        user=work group=www-data \
+        maximum-requests=1000 \
+        display-name=%{GROUP}
+
+    <Directory /path/to/my/app>
+        WSGIProcessGroup mydomain-tld-myapp
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    </Directory>
+
+    WSGIScriptAlias /myapp /path/to/my/app/application.wsgi
+
