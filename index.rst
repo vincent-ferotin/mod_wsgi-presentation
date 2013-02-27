@@ -7,6 +7,7 @@ Preliminaries
 **Outline**:
     1.  a bit of context on serving `Python` web applications
     2.  some `mod_wsgi` configuration options
+    3.  current state with `PhiloLogic4`
 
 **Disclaimer**:
     .. note::
@@ -233,4 +234,47 @@ RTFantasticMaintainer's
     <http://blog.dscpl.com.au/search/label/mod_wsgi>`_,
     `some of its conferences
     <http://pyvideo.org/search?models=videos.video&q=graham+dumpleton>`_
+
+
+`PhiloLogic4` and `mod_wsgi`
+----------------------------
+
+*   It actually does not works (out of the box)!
+*   It should, easily (already `WSGI` aware :-):
+    it's probably almost a configuration problem,
+    related to files paths locations.
+    Pb closely related to succeeding in installing into a `virtualenv`?
+*   Quick tests:
+    putting a `WSGI` module into ``/var/www/philologic/mydb/``,
+    and try serving it by `gunicorn` then `mod_wsgi`...
+
+
+Quick test (0) `WSGI` file
+--------------------------
+
+Given the following `WSGI` module, put into ``/var/www/philologic/mydb/app.py``:
+
+.. code-block:: python
+
+   import sys
+
+    sys.path.append('/var/www/philologic/mydb')
+    from dispatcher import philo_dispatcher as application
+
+
+Quick test (1) `gunicorn`
+-------------------------
+
+.. code-block:: sh
+
+    /var/www/philologic/mydb $ gunicorn app
+    2013-02-27 18:05:47 [7409] [ERROR] Error handling request
+    Traceback (most recent call last):
+    File "/var/www/philologic/mydb/dispatcher.py", line 20, in philo_dispatcher
+        yield getattr(reports, report or "navigation")(environ,start_response)
+    File "/var/www/philologic/mydb/reports/navigation.py", line 17, in navigation
+        db, dbname, path_components, q = wsgi_response(environ,start_response)
+    File "/var/www/philologic/mydb/functions/wsgi_handler.py", line 18, in wsgi_response
+        myname = environ["SCRIPT_FILENAME"]
+    KeyError: 'SCRIPT_FILENAME'
 
