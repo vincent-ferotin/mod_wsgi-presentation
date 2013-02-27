@@ -192,19 +192,17 @@ Configuration (4)
 Configuration (5)
 -----------------
 
-*   (`WSGIDaemonProcess` continued)
+*   link process group to  `WSGI` parent dir. by its *name*:
 
-    *   link process group to  `WSGI` parent dir. by its *name*:
+    .. code-block:: apache
 
-        .. code-block:: apache
+        WSGIDaemonProcess mydomain-tld-myapp (...)
 
-            WSGIDaemonProcess mydomain-tld-myapp (...)
-
-            <Directory /path/to/my/app>
-                WSGIProcessGroup mydomain-tld-myapp
-                WSGIApplicationGroup %{GLOBAL}
-                (...)
-            </Directory>
+        <Directory /path/to/my/app>
+            WSGIProcessGroup mydomain-tld-myapp
+            WSGIApplicationGroup %{GLOBAL}
+            (...)
+        </Directory>
 
 
 Full example
