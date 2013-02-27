@@ -105,11 +105,11 @@ Configuration (1)
 Configuration (2)
 -----------------
 
-*   `WSGIDaemonProcess`_, to run app. in its own processes:
+*   `WSGIDaemonProcess`_, to run app. in its own process:
 
     .. code-block:: apache
 
-        WSGIDaemonProcess mydomain-tld-myapp processes=2 threads=5 (...)
+        WSGIDaemonProcess mydomain-tld-myapp (...)
 
     .. note:: recommended by G.D. instead of default `embedded` mode
 
