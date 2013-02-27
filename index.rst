@@ -76,3 +76,27 @@ on a `Apache` web server:
 .. _Graham Dumpleton: http://blog.dscpl.com.au/
 .. _virtualenv: http://www.virtualenv.org/
 
+
+Configuration (1)
+-----------------
+
+*   `WSGIScriptAlias`_, to link an URL to a `WSGI` app.
+
+    .. code-block:: apache
+
+        WSGIScriptAlias /myapp /path/to/my/app/application.wsgi
+
+    should offers access to app. from ``http://my.domain.tld/myapp``
+
+*   (probably needs) access to `WSGI` file:
+
+    .. code-block:: apache
+
+        <Directory /path/to/my/app>
+            Order deny,allow
+            Allow from all
+        </Directory>
+
+
+.. _WSGIScriptAlias:
+        http://code.google.com/p/modwsgi/wiki/ConfigurationDirectives#WSGIScriptAlias
