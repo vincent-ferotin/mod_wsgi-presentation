@@ -124,3 +124,55 @@ Configuration (2)
 
 .. _WSGIDaemonProcess:
     http://code.google.com/p/modwsgi/wiki/ConfigurationDirectives#WSGIDaemonProcess
+
+
+Configuration (3)
+-----------------
+
+*   (`WSGIDaemonProcess` continued)
+
+    *   ``user`` & ``group``:
+
+        .. code-block:: apache
+
+            WSGIDaemonProcess (...) user=work group=www-data (...)
+
+    *   ``maximum-requests``:
+
+        .. code-block:: apache
+
+            WSGIDaemonProcess (...) maximum-requests=1000 (...)
+
+
+Configuration (4)
+-----------------
+
+*   (`WSGIDaemonProcess` continued)
+
+    *   ``python-path``:
+
+        .. code-block:: apache
+
+            WSGIDaemonProcess (...) \
+                python-path=/usr/lib/python2.7,/usr/local/lib/python2.7/dist-packages,(...)
+
+        which allows using a `virtualenv`!
+
+
+Configuration (5)
+-----------------
+
+*   (`WSGIDaemonProcess` continued)
+
+    *   link process group to  `WSGI` parent dir. by its *name*:
+
+        .. code-block:: apache
+
+            WSGIDaemonProcess mydomain-tld-myapp (...)
+
+            <Directory /path/to/my/app>
+                WSGIProcessGroup mydomain-tld-myapp
+                WSGIApplicationGroup %{GLOBAL}
+                (...)
+            </Directory>
+
