@@ -128,7 +128,7 @@ Configuration (2)
 
     .. note:: recommended by G.D. instead of default `embedded` mode
 
-    Some of other options:
+    Some of its options:
 
     *   ``processes`` & ``threads``:
 
@@ -192,8 +192,8 @@ Configuration (5)
             </Directory>
 
 
-Complete example
-----------------
+Full example
+------------
 
 .. code-block:: apache
 
@@ -239,13 +239,13 @@ RTFantasticMaintainer's
 `PhiloLogic4` and `mod_wsgi`
 ----------------------------
 
-*   It actually does not works (out of the box)!
+*   It currently does not work (out of the box)!
 *   It should, easily (already `WSGI` aware :-):
     it's probably almost a application configuration problem (?).
     Pb closely related to succeeding in installing app. into a `virtualenv`?
 *   Quick tests:
     putting a `WSGI` module into ``/var/www/philologic/mydb/``,
-    and try serving it by `gunicorn` then `mod_wsgi`...
+    and trying to serve it either by `gunicorn` then `mod_wsgi`...
 
 
 Quick test (0) `WSGI` file
