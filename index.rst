@@ -173,6 +173,14 @@ Configuration (4)
 
         which allows using a `virtualenv`!
 
+        Given a fresh `virtualenv` (e.g. called ``myappvenv``),
+        it is possible to set ``python-path`` to its path value:
+
+        .. code-block:: apache
+
+            WSGIDaemonProcess (...) \
+                python-path=/path/to/myappvenv/lib/python2.7/site-packages
+
 
 Configuration (5)
 -----------------
@@ -199,7 +207,7 @@ Full example
 
     WSGIDaemonProcess mydomain-tld-myapp \
         processes=2 threads=5 \
-        python-path=/usr/lib/python2.7,(...) \
+        python-path=/path/to/myappvenv/lib/python2.7/site-packages \
         user=work group=www-data \
         maximum-requests=1000 \
         display-name=%{GROUP}
