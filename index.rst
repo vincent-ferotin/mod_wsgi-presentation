@@ -1,12 +1,18 @@
 A (very) short intro. to `mod_wsgi`
 ===================================
 
-Outline
--------
+Preliminaries
+-------------
 
-1.  a bit of context on serving `Python` web applications
-2.  some `mod_wsgi` configuration options
+**Outline**:
+    1.  a bit of context on serving `Python` web applications
+    2.  some `mod_wsgi` configuration options
 
+**Disclaimer**:
+    .. note::
+
+        I only use `gunicorn` for development,
+        and a monolithic `mod_wsgi` configuration for prod. that "works for me"!
 
 
 Serve a `Python` web app.
