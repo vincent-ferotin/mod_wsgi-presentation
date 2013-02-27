@@ -222,6 +222,16 @@ Full example
     WSGIScriptAlias /myapp /path/to/my/app/application.wsgi
 
 
+Addendum
+--------
+
+There should be some tricky additional steps, such as:
+
+*   setting good rights to paths;
+*   setting path for default daemon process -- but could not remember :-(
+*   others? be careful...
+
+
 RTFantasticMaintainer's
 -----------------------
 
