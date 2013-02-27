@@ -284,9 +284,15 @@ next ``dispatcher.py`` and its friends (``data/``, ``templates/``, etc.):
     sys.path.append('/var/www/philologic/mydb')
     from dispatcher import philo_dispatcher as application
 
+and its following link ``app.wsgi``:
 
-Quick test (1) `gunicorn`
--------------------------
+.. code-block:: sh
+
+    /var/www/philologic/mydb $ ln -s app.py app.wsgi
+
+
+Quick test (1) `gunicorn` (``app.py``)
+--------------------------------------
 
 .. code-block:: sh
 
@@ -303,8 +309,8 @@ Quick test (1) `gunicorn`
     KeyError: 'SCRIPT_FILENAME'
 
 
-Quick test (2) `mod_wsgi`
--------------------------
+Quick test (2) `mod_wsgi` (``app.wsgi``)
+----------------------------------------
 
 ``Internal Server Error``
 
