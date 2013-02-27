@@ -1,3 +1,26 @@
 h2 {
     bottom: 100px;
     }
+
+div.note {
+    background-color: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    }
+
+div.admonition {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 7px;
+    }
+
+p.admonition-title {
+    display: inline;
+    }
+
+p.admonition-title:after {
+    content: ":";
+    }
+
+div.admonition p.admonition-title + p {
+    display: inline;
+    }
