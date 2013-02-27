@@ -245,17 +245,18 @@ RTFantasticMaintainer's
     Pb closely related to succeeding in installing app. into a `virtualenv`?
 *   Quick tests:
     putting a `WSGI` module into ``/var/www/philologic/mydb/``,
-    and trying to serve it either by `gunicorn` then `mod_wsgi`...
+    and trying to serve it either by `gunicorn` or `mod_wsgi`...
 
 
 Quick test (0) `WSGI` file
 --------------------------
 
-Given the following `WSGI` module, put into ``/var/www/philologic/mydb/app.py``:
+Given the following `WSGI` module, put into ``/var/www/philologic/mydb/app.py``,
+next ``dispatcher.py`` and its friends (``data/``, ``templates/``, etc.):
 
 .. code-block:: python
 
-   import sys
+    import sys
 
     sys.path.append('/var/www/philologic/mydb')
     from dispatcher import philo_dispatcher as application
@@ -267,7 +268,8 @@ Quick test (1) `gunicorn`
 .. code-block:: sh
 
     /var/www/philologic/mydb $ gunicorn app
-    2013-02-27 18:05:47 [7409] [ERROR] Error handling request
+    (...)
+    [ERROR] Error handling request
     Traceback (most recent call last):
     File "/var/www/philologic/mydb/dispatcher.py", line 20, in philo_dispatcher
         yield getattr(reports, report or "navigation")(environ,start_response)
