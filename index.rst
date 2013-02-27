@@ -198,3 +198,25 @@ Complete example
 
     WSGIScriptAlias /myapp /path/to/my/app/application.wsgi
 
+
+RTFM
+----
+
+*   `configuration guidelines
+    <http://code.google.com/p/modwsgi/wiki/ConfigurationGuidelines>`_
+*   `configuration directives
+    <http://code.google.com/p/modwsgi/wiki/ConfigurationDirectives>`_
+*   `on virtualenv
+    <http://code.google.com/p/modwsgi/wiki/VirtualEnvironments>`_
+*   `FAQ
+    <http://code.google.com/p/modwsgi/wiki/FrequentlyAskedQuestions>`_
+*   `config issues
+    <http://code.google.com/p/modwsgi/wiki/ConfigurationIssues>`_
+    and `application issues
+    <http://code.google.com/p/modwsgi/wiki/ApplicationIssues>`_
+*   Graham Dumpleton:
+    `its blog
+    <http://blog.dscpl.com.au/search/label/mod_wsgi>`_,
+    `some of its conferences
+    <http://pyvideo.org/search?models=videos.video&q=graham+dumpleton>`_
+
