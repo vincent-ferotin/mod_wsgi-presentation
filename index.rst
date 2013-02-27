@@ -57,3 +57,22 @@ on a `Apache` web server:
 .. _mod_wsgi: http://code.google.com/p/modwsgi/
 .. _uwsgi: http://projects.unbit.it/uwsgi/
 
+
+`mod_wsgi`
+----------
+
+*   `Apache httpd` module
+*   created and maintained by `Graham Dumpleton`_
+*   feature full:
+
+    *   mature + decent performance
+    *   refresh app. without restart `Apache`, by touching `WSGI` file
+    *   daemon mode, which could work with `virtualenv`_
+    *   numerous configuration options
+
+⇒ http://code.google.com/p/modwsgi/
+
+
+.. _Graham Dumpleton: http://blog.dscpl.com.au/
+.. _virtualenv: http://www.virtualenv.org/
+
