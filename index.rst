@@ -317,7 +317,8 @@ Quick test (2) `mod_wsgi` (``app.wsgi``)
 .. code-block:: sh
 
     /var/log/apache2 $ tail error.log
-    mod_wsgi (pid=9268): Exception occurred processing WSGI script '/var/www/philologic/mydb/app.wsgi'.
+    (...)
+    mod_wsgi: Exception occurred processing WSGI script '/var/www/philologic/mydb/app.wsgi'.
     Traceback (most recent call last):
       File "/var/www/philologic/mydb/dispatcher.py", line 24, in philo_dispatcher
         yield reports.form(environ,start_response)
