@@ -241,9 +241,8 @@ RTFantasticMaintainer's
 
 *   It actually does not works (out of the box)!
 *   It should, easily (already `WSGI` aware :-):
-    it's probably almost a configuration problem,
-    related to files paths locations.
-    Pb closely related to succeeding in installing into a `virtualenv`?
+    it's probably almost a application configuration problem (?).
+    Pb closely related to succeeding in installing app. into a `virtualenv`?
 *   Quick tests:
     putting a `WSGI` module into ``/var/www/philologic/mydb/``,
     and try serving it by `gunicorn` then `mod_wsgi`...
@@ -277,4 +276,29 @@ Quick test (1) `gunicorn`
     File "/var/www/philologic/mydb/functions/wsgi_handler.py", line 18, in wsgi_response
         myname = environ["SCRIPT_FILENAME"]
     KeyError: 'SCRIPT_FILENAME'
+
+
+Quick test (2) `mod_wsgi`
+-------------------------
+
+``Internal Server Error``
+
+.. code-block:: sh
+
+    /var/log/apache2 $ tail error.log
+    mod_wsgi (pid=9268): Exception occurred processing WSGI script '/var/www/philologic/databases/app.wsgi'.
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1] Traceback (most recent call last):
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]   File "/var/www/philologic/databases/dispatcher.py", line 24, in philo_dispatcher
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]     yield reports.form(environ,start_response)
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]   File "/var/www/philologic/databases/reports/form.py", line 11, in form
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]     return render_template(db=db,dbname=dbname,form=True, template_name='form.mako')
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]   File "/var/www/philologic/databases/reports/render_template.py", line 12, in render_template
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]     template = Template(filename="templates/%s" % data['template_name'], lookup=templates)
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]   File "/usr/lib/python2.7/dist-packages/mako/template.py", line 276, in __init__
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]     module = self._compile_from_file(path, filename)
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]   File "/usr/lib/python2.7/dist-packages/mako/template.py", line 349, in _compile_from_file
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]     data = util.read_file(filename)
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]   File "/usr/lib/python2.7/dist-packages/mako/util.py", line 414, in read_file
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]     fp = open(path, mode)
+    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1] IOError: [Errno 2] No such file or directory: 'templates/form.mako'
 
