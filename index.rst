@@ -286,19 +286,14 @@ Quick test (2) `mod_wsgi`
 .. code-block:: sh
 
     /var/log/apache2 $ tail error.log
-    mod_wsgi (pid=9268): Exception occurred processing WSGI script '/var/www/philologic/databases/app.wsgi'.
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1] Traceback (most recent call last):
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]   File "/var/www/philologic/databases/dispatcher.py", line 24, in philo_dispatcher
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]     yield reports.form(environ,start_response)
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]   File "/var/www/philologic/databases/reports/form.py", line 11, in form
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]     return render_template(db=db,dbname=dbname,form=True, template_name='form.mako')
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]   File "/var/www/philologic/databases/reports/render_template.py", line 12, in render_template
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]     template = Template(filename="templates/%s" % data['template_name'], lookup=templates)
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]   File "/usr/lib/python2.7/dist-packages/mako/template.py", line 276, in __init__
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]     module = self._compile_from_file(path, filename)
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]   File "/usr/lib/python2.7/dist-packages/mako/template.py", line 349, in _compile_from_file
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]     data = util.read_file(filename)
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]   File "/usr/lib/python2.7/dist-packages/mako/util.py", line 414, in read_file
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1]     fp = open(path, mode)
-    [Wed Feb 27 18:30:01 2013] [error] [client 127.0.0.1] IOError: [Errno 2] No such file or directory: 'templates/form.mako'
+    mod_wsgi (pid=9268): Exception occurred processing WSGI script '/var/www/philologic/mydb/app.wsgi'.
+    Traceback (most recent call last):
+      File "/var/www/philologic/mydb/dispatcher.py", line 24, in philo_dispatcher
+        yield reports.form(environ,start_response)
+      File "/var/www/philologic/mydb/reports/form.py", line 11, in form
+        return render_template(db=db,dbname=dbname,form=True, template_name='form.mako')
+      File "/var/www/philologic/mydb/reports/render_template.py", line 12, in render_template
+        template = Template(filename="templates/%s" % data['template_name'], lookup=templates)
+      (...)
+    IOError: [Errno 2] No such file or directory: 'templates/form.mako'
 
