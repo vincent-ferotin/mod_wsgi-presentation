@@ -85,7 +85,7 @@ on a `Apache` web server:
     *   daemon mode, which could work with `virtualenv`_
     *   numerous configuration options
 
-⇒ http://code.google.com/p/modwsgi/
+**=>** http://code.google.com/p/modwsgi/
 
 
 .. _Graham Dumpleton: http://blog.dscpl.com.au/
