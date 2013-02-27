@@ -1,6 +1,13 @@
 A (very) short intro. to `mod_wsgi`
 ===================================
 
+| 
+
+| Vincent Férotin, 2013-02-27
+| UPR76, CNRS
+| for the `ARTFL` project & `PhiloLogic`
+
+
 Preliminaries
 -------------
 
@@ -43,7 +50,7 @@ Given a `WSGI`_ application, it is possible to serve it in multiple ways:
 
     .. code-block:: sh
 
-        $ cd /var/www/philologic/caesar
+        $ cd /var/www/philologic/mydb
         $ gunicorn dispatcher:philo_dispatcher
 
 *   *production*: choose your stack, e.g.
