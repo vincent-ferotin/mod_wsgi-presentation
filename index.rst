@@ -3,7 +3,7 @@ A (very) short intro. to `mod_wsgi`
 
 | 
 
-| Vincent Férotin, 2013-02-27
+| Vincent Férotin, 2013-02-28
 | UPR76, CNRS
 | for the `ARTFL` project & `PhiloLogic`
 
