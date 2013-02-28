@@ -371,5 +371,21 @@ Given `virtualenvwrapper`_ installed:
 But... how ``pip install philologic-webapp``?
 
 
+ToDo?
+-----
+
+1.  make `PhiloLogic4` runnable under `mod_wsi`, and let web app.
+    closed to a specific database, which probably only needs:
+
+    *   fix environment variables and paths
+
+2.  and/or create an installable package for web app.
+
+    *   create a true `Python` package namespace (e.g. :mod:`philologic.web`),
+        and use this namespace anywhere, instead of tweaking ``sys.path``
+    *   write a dedicated ``setup.py``, or merge into already existing
+        :mod:`philologic`
+
+
 .. _virtualenvwrapper: http://virtualenvwrapper.readthedocs.org/en/latest/
 
