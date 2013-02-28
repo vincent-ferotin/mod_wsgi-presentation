@@ -43,6 +43,25 @@ Most tools require that you application conforms to the `WSGI`_ interface.
 .. _WSGI: http://www.wsgi.org/
 
 
+`WSGI`
+------
+
+*   `WSGI`: "`Python Web Server Gateway Interface`", described in `PEP 3333`_
+    This is the current standard in `Python`'s world:
+    conform to it, and let use your preferred tools!
+*   Running `PhiloLogic4` under `Apache httpd mod_wsgi` is a pragmatic goal.
+    Probably, there is a bigger one which afford us this previous goal
+    "for free": **allowing its full installation in a virtualenv**:
+
+    *   allowing multiple installation of `PhiloLogic4` in same O.S.,
+        e.g. at different versions
+    *   decoupling web templates installation from databases,
+        e.g. for engine upgrade without touching them
+
+
+.. _PEP 3333: http://www.python.org/dev/peps/pep-3333/
+
+
 Serving a `WSGI` app.
 ---------------------
 
