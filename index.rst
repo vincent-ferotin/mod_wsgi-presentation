@@ -348,3 +348,28 @@ Quick test (2) `mod_wsgi` (``app.wsgi``)
       (...)
     IOError: [Errno 2] No such file or directory: 'templates/form.mako'
 
+
+`virtualenv` installation test
+------------------------------
+
+Given `virtualenvwrapper`_ installed:
+
+.. code-block:: sh
+
+    $ mkvirtualenv philologic
+    $ # virtualenv 'philologic' activated
+    $ # install libphilo
+    $ cd libphilo
+    $ make install exec_prefix=/path/to/virtualenvs/philologic
+    $ # install python bindings
+    $ cd ../python
+    $ python setup.py install
+    $ # install web application
+    $ cd ../www
+    $ pip install Mako BeautifulSoup
+
+But... how ``pip install philologic-webapp``?
+
+
+.. _virtualenvwrapper: http://virtualenvwrapper.readthedocs.org/en/latest/
+
