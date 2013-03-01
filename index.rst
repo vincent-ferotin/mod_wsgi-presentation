@@ -62,6 +62,16 @@ Most tools require that you application conforms to the `WSGI`_ interface.
 .. _PEP 3333: http://www.python.org/dev/peps/pep-3333/
 
 
+System-wide VS `virtualenv`
+---------------------------
+
+| 
+
+.. image:: sys-venv.png
+
+Default relations numbers are ``1``.
+
+
 Serving a `WSGI` app.
 ---------------------
 
